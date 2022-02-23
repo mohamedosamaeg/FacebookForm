@@ -5,7 +5,7 @@ using System.Text;
 
 namespace facebook.Models
 {
-    public class Groups :BaseWithName
+    public class Groups 
     {
         public string Post { get; set; }
         public int PostNumbers { get; set; }

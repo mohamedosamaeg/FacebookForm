@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using facebook.Models;
 
 namespace facebook.Parent
      {
-    public abstract class Humen : Audit
+    public abstract class Human : Audit
     {
-        public Humen()
+        public Human()
         {
             FullName=$"{FirstName} {LastName}";
         }

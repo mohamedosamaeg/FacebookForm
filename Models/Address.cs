@@ -1,10 +1,12 @@
-﻿using System;
+﻿using facebook.Parent;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace facebook.Models
 {
-    public class Address
+    public class Address :Human
     {
+        
     }
 }

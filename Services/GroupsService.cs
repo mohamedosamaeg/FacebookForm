@@ -14,7 +14,7 @@ namespace facebook.Services
 
         public string Name { get; private set; }
 
-        public void Add(FacebookDbContext entity)
+        public void Add(Groups entity)
         {
             if (!IsExist(entity))
             {
@@ -44,9 +44,9 @@ namespace facebook.Services
             return null;
         }
 
-        public List<GroupsService> Get()
+        public List<Groups> Get()
         {
-            return dbContext.Groups.ToList();
+            return dbContext.Group.ToList();
         }
 
         public bool IsExist(Groups entity)
@@ -71,12 +71,12 @@ namespace facebook.Services
             return dbContext.Group.Any(x => x.Id == Id);
         }
 
-        public void Update(GroupsService entity)
+        public void Update(Groups entity)
         {
             if (IsExist(entity))
             {
-                Group Groups = Get(entity.Id);
-                Groups.Name= entity.Name;
+                Groups Group = Get(entity.Id);
+                Group.Name= entity.Name;
                 dbContext.Group.Update(Group);
                 dbContext.SaveChanges();
             }
@@ -101,7 +101,18 @@ namespace facebook.Services
         {
             throw new NotImplementedException();
         }
+
+        List<GroupsService> IGenericCRUD<GroupsService>.Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(GroupsService entity)
+        {
+            throw new NotImplementedException();
+        }
     }
        
 }
+
 

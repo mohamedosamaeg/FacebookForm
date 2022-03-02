@@ -10,6 +10,7 @@ namespace facebook.Models
     {
         public string Post { get; set; }
         public int PostNumbers { get; set; }
+        public List<Stories> Stories { get; set; }
         
       
     }

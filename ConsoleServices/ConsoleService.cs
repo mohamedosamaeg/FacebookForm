@@ -9,7 +9,7 @@ using facebook.Services;
 
 namespace facebook.ConsoleServices
 {
-    public static class
+    public static class ConsoleService
     {
         
     }

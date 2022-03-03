@@ -24,6 +24,6 @@ namespace facebook
         public DateTime CreatedDate { get; internal set; }
         public object Groups { get; internal set; }
         public object User { get; internal set; }
-        public object UserRole { get; internal set; }
+        public DbSet<UserRole> UserRole { get; internal set; }
     }
 }

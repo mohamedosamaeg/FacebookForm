@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace facebook.Services
 {
-    public class UserService : Iuser
+    public class UserService : IuserRepository
     {
         FacebookDbContext dbContext = new FacebookDbContext();
         public void Add(User entity)

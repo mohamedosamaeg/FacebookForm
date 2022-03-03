@@ -5,7 +5,7 @@ using System.Text;
 
 namespace facebook.Repository
 {
-    public interface Iuser:IGenericCRUD<User>
+    public interface IuserRepository:IGenericCRUD<User>
     {
         bool IsPasswordMatch(string Password, string ConfirmPassword);
         User LogIn(string UserName, string Password);

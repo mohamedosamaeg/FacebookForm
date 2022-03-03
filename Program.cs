@@ -1,4 +1,5 @@
-﻿using System;
+﻿using facebook.Const;
+using System;
 
 namespace Facebook
 
@@ -7,7 +8,7 @@ namespace Facebook
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine($"Welome From {ProjectDetails.ProjectName}");
         }
     }
 }

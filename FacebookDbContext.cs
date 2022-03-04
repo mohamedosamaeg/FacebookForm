@@ -16,14 +16,15 @@ namespace facebook
             optionsBuilder.UseSqlServer(ConnectionString);
         }
 
-        public DbSet<Stories> Story { get; set; }
-        public DbSet<Groups> Group { get; set; }
+        public DbSet<Stories>Story { get; set; }
+        
         public DbSet<MainOptions> Settings { get; set; }
         public DbSet<Address> Addresses { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DateTime CreatedDate { get; internal set; }
-        public object Groups { get; internal set; }
-        public object User { get; internal set; }
-        public DbSet<UserRole> UserRole { get; internal set; }
+        
+        public DateTime CreatedDate { get;  set; }
+        public DbSet<Groups> groups { get;  set; }
+        public DbSet<User> users{ get; set; }
+        public DbSet<UserRole> UserRole { get;  set; }
+        
     }
 }

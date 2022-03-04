@@ -19,7 +19,7 @@ namespace facebook.Services
             if (!IsExist(entity))
             {
                 entity.CreatedDate = DateTime.Now;
-                dbContext.Group.Add(entity);
+                dbContext.groups.Add(entity);
                 dbContext.SaveChanges();
             }
         }
@@ -30,7 +30,7 @@ namespace facebook.Services
             {
                 
 
-                dbContext.Group.Remove(Get(Id));
+                dbContext.groups.Remove(Get(Id));
                 dbContext.SaveChanges();
             }
         }
@@ -39,21 +39,21 @@ namespace facebook.Services
         {
             if (IsExistById(id))
             {
-                return dbContext.Group.Where(x => x.Id == id).SingleOrDefault();
+                return dbContext.groups.Where(x => x.Id == id).SingleOrDefault();
             }
             return null;
         }
 
         public List<Groups> Get()
         {
-            return dbContext.Group.ToList();
+            return dbContext.groups.ToList();
         }
 
         public bool IsExist(Groups entity)
         {
             if (!IsExistById(entity.Id))
             {
-                return dbContext.Group.Any(x => x.Name == entity.Name);
+                return dbContext.groups.Any(x => x.Name == entity.Name);
             }
             else
             {
@@ -68,7 +68,7 @@ namespace facebook.Services
 
         public bool IsExistById(int Id)
         {
-            return dbContext.Group.Any(x => x.Id == Id);
+            return dbContext.groups.Any(x => x.Id == Id);
         }
 
         public void Update(Groups entity)
@@ -77,7 +77,7 @@ namespace facebook.Services
             {
                 Groups Group = Get(entity.Id);
                 Group.Name= entity.Name;
-                dbContext.Group.Update(Group);
+                dbContext.groups.Update(Group);
                 dbContext.SaveChanges();
             }
         }

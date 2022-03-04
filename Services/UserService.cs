@@ -18,7 +18,7 @@ namespace facebook.Services
                 entity.UserName = entity.UserName.ToUpper();
                 entity.Password = entity.Password.ToUpper();
                 entity.CreatedDate=DateTime.Now;
-                dbContext.Users.Add(entity);
+                dbContext.users.Add(entity);
                 dbContext.SaveChanges();
             }
         }
@@ -27,7 +27,7 @@ namespace facebook.Services
         {
             if (IsExist(Id))
             {
-                dbContext.Users.Remove(Get(Id));
+                dbContext.users.Remove(Get(Id));
             }
         }
 
@@ -35,23 +35,23 @@ namespace facebook.Services
         {
             if (IsExist(id))
             {
-                return dbContext.Users.Find(id);
+                return dbContext.users.Find(id);
             }
             return null;
         }
 
         public List<User> Get()
         {
-            return dbContext.Users.ToList();
+            return dbContext.users.ToList();
         }
         public bool IsExist(int Id)
         {
-            return dbContext.Users.Any(x => x.Id == Id);
+            return dbContext.users.Any(x => x.Id == Id);
         }
 
         public bool IsExist(string UserName, string Password)
         {
-            return dbContext.Users.Any(x => x.UserName == UserName && x.Password == Password);
+            return dbContext.users.Any(x => x.UserName == UserName && x.Password == Password);
         }
 
         public bool IsPasswordMatch(string Password, string ConfirmPassword)
@@ -68,7 +68,7 @@ namespace facebook.Services
 
         public bool IsUserNameExist(string UserName)
         {
-            return dbContext.Users.Any(x => x.UserName == UserName);
+            return dbContext.users.Any(x => x.UserName == UserName);
         }
 
         public bool IsUserValidate(User entity, bool IsUpdate = false)
@@ -104,8 +104,8 @@ namespace facebook.Services
         {
             if (IsExist(UserName.ToUpper(), Password.ToUpper()))
             {
-                return dbContext.Users.Where(x => x.UserName == UserName && x.Password == Password)
-                    .Include(x => x.addresses).Include(x => x.mobiles).Include(x => x.userRole).FirstOrDefault();
+                return dbContext.users.Where(x => x.UserName == UserName && x.Password == Password)
+                    .Include(x => x.userRole).FirstOrDefault();
             }
             return null;
         }
@@ -119,7 +119,7 @@ namespace facebook.Services
                 NewEntity.FirstName = entity.FirstName;
                 NewEntity.LastName = entity.LastName;
                 NewEntity.Email = entity.Email;
-                dbContext.Users.Update(NewEntity);
+                dbContext.users.Update(NewEntity);
                 dbContext.SaveChanges();
             }
         }

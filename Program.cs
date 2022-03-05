@@ -1,4 +1,5 @@
-﻿using facebook.Const;
+﻿using facebook.ConsoleServices;
+using facebook.Const;
 using System;
 
 namespace Facebook
@@ -9,6 +10,11 @@ namespace Facebook
         static void Main(string[] args)
         {
             Console.WriteLine($"Welome From {ProjectDetails.ProjectName}");
+            ConsoleService.UserDealing();
+            ConsoleService.LoginForm();
+            ConsoleService.ViewStories();
+
+
         }
     }
 }

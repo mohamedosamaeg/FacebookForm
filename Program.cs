@@ -11,8 +11,7 @@ namespace Facebook
         {
             Console.WriteLine($"Welome From {ProjectDetails.ProjectName}");
             ConsoleService.UserDealing();
-            ConsoleService.LoginForm();
-            ConsoleService.ViewStories();
+           
 
 
         }

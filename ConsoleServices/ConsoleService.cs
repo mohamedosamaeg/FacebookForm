@@ -12,8 +12,7 @@ namespace facebook.ConsoleServices
 {
     public static class ConsoleService
     {
-        private static object groupsService;
-
+      
         public static StoriesService StoriesService { get; private set; }
 
         public static void UserDealing()
@@ -21,7 +20,7 @@ namespace facebook.ConsoleServices
             Console.WriteLine($"Welcome {ProjectDetails.ProjectName}\n" +
                 $"{ProjectDetails.Version}\n" +
                 $"{ProjectDetails.ProjectDescription}\n\n");
-            SeedDate(groupsService);
+            
             Console.WriteLine("Are you current user? true or false");
             bool IsCurrent = Convert.ToBoolean(Console.ReadLine());
             User user = new User();
@@ -79,7 +78,7 @@ namespace facebook.ConsoleServices
                 user.UserRoleId = 1;
                 userService.Add(user);
             }
-            GroupsService governroteService = new GroupsService();
+            GroupsService Groups = new GroupsService();
             Groups groups = new Groups();
             groups.Name = "Alahly Community";
             groupsService.Add(groups);

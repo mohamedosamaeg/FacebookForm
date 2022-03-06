@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace facebook.Services
 {
-    public class GroupsService : IGenericCRUD<GroupsService>, IValidation<GroupsService>
+    public class GroupsService : IGenericCRUD<Groups>, IValidation<Groups>
     {
         FacebookDbContext dbContext = new FacebookDbContext();
 
@@ -92,25 +92,7 @@ namespace facebook.Services
             throw new NotImplementedException();
         }
 
-        GroupsService IGenericCRUD<GroupsService>.Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool IValidation<GroupsService>.IsExist(GroupsService entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<GroupsService> IGenericCRUD<GroupsService>.Get()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(GroupsService entity)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
        
 }

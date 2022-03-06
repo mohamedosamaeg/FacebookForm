@@ -8,8 +8,9 @@ namespace facebook.Models
 {
     public class Groups :Audit
     {
+        public List<Posts> posts { get; set; }
         public string Post { get; set; }
-        public int PostNumbers { get; set; }
+        
         public List<Stories> Stories { get; set; }
         
       

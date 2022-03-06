@@ -13,6 +13,7 @@ namespace facebook.Models
 
         public string UserName { get; set; }
         public string Password  {get; set; }
+        public string ConfirmPassword { get; set; }
         public int UserRoleId { get; set; }
         [ForeignKey("UserRoleId")]
         public  UserRole userRole  { get; set; }

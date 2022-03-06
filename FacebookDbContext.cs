@@ -1,9 +1,6 @@
 ﻿using facebook.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
 
 
 namespace facebook
@@ -25,6 +22,7 @@ namespace facebook
         public DbSet<Groups> groups { get;  set; }
         public DbSet<User> users{ get; set; }
         public DbSet<UserRole> UserRole { get;  set; }
-        
+        public DbSet<Posts> posts { get; set; }
+
     }
 }

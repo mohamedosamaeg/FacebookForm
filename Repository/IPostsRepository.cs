@@ -5,8 +5,8 @@ using System.Text;
 
 namespace facebook.Repository
 {
-    public interface IStoriesRepository : IGenericCRUD<Stories>
+    public interface IPostsRepository : IGenericCRUD<Posts>
     {
-        void Actions(int stories);
+        void Likes(int Posts);
     }
 }

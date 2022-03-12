@@ -7,7 +7,6 @@ namespace facebook.Models
 {
     public class UserRole:Audit
     {
-        
         public List<User> users { get; set; }
     }
 

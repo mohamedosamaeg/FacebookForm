@@ -12,8 +12,9 @@ namespace facebook.ConsoleServices
 {
     public static class ConsoleService
     {
-      
-        public static StoriesService StoriesService { get; private set; }
+
+        public static StoriesService StoriesService { get; set; }
+
 
         public static void UserDealing()
         {
@@ -308,7 +309,7 @@ namespace facebook.ConsoleServices
             else
             {
                 Console.WriteLine($"id.{Stories.Id}\n" +
-                   $"Story's Owner {Stories.UserId}\n");
+                   $"Story's User {Stories.UserId}\n");
 
 
 

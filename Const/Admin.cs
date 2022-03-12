@@ -6,7 +6,7 @@ namespace facebook.Const
 {
     internal class Admin
     {
-        public static string AdminName = "Mohamed Osama";
+        public static string AdminName = "MohamedOsama";
         public static string AdminPassword = "662002";
         public const string AdminEmail = "mo662002@gmail.com";
         public const string AdminRole = "AdminRole";

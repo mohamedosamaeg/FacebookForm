@@ -15,7 +15,7 @@ namespace facebook
 
         public DbSet<Stories>Story { get; set; }
         
-        public DbSet<MainOptions> Settings { get; set; }
+        public DbSet<ProfileSettings> ProfileSetting { get; set; }
         public DbSet<Address> Addresses { get; set; }
         
         public DateTime CreatedDate { get;  set; }

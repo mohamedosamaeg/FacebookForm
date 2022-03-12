@@ -299,17 +299,19 @@ namespace facebook.ConsoleServices
             if (IsAdmin)
             {
                 Console.WriteLine($"id.{Stories.Id}\n" +
-                    $"Story's Owner {Stories.StoryOwner}\n" +
-                    $"Created Date {Stories.CreatedDate}\n" +
+                    $"Story's Owner {Stories.UserId}\n" +
+                    $"Created Date {Stories.CreatedDate}\n");
 
-                    $"play {Stories.Isplay}\n" );
+                   
                    
             }
             else
             {
                 Console.WriteLine($"id.{Stories.Id}\n" +
-                   $"Story's Owner {Stories.StoryOwner}\n" +
-                   $"Reply {Stories.StoryReply}\n\n");
+                   $"Story's Owner {Stories.UserId}\n");
+
+
+
             }
         }
         

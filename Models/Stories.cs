@@ -13,11 +13,11 @@ namespace facebook.Models
         
         public int StoryId { get; set; }
         public DateTime ExpiredTime { get; set; }
-        public String StoryReply { get; set; }
+        Stories story = new Stories();
         [ForeignKey("StoryId")]
         public Groups Groups { get;  set; }
 
-        public string StoryOwner { get;  set; }
-        public string Isplay { get;  set; }
+        public string UserId { get;  set; }
+        
     }
 }

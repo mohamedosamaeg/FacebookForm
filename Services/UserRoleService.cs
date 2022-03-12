@@ -1,9 +1,7 @@
 ﻿using facebook.Repository;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using System.Threading.Tasks;
 using facebook.Models;
 
 namespace facebook.Services

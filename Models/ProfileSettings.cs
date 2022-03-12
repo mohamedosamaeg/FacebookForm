@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace facebook.Models
 {
-    public class MainOptions : Audit
+    public class ProfileSettings : Audit
     {
-        public List<MainOptions> Settings { get; set; }
+        public List<ProfileSettings> Settings { get; set; }
     }
 }

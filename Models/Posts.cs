@@ -11,7 +11,9 @@ namespace facebook.Models
         public int GroupId { get; set; }
         [ForeignKey("GroupId")]
         public Groups group { get; set; }
-        public Groups Groups { get; set; }
+        public int UserId { get; set; }
+        [ForeignKey("UserId")]
+        public User user { get; set; }
 
     }
 }

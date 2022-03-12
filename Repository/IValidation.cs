@@ -4,10 +4,10 @@ using System.Text;
 
 namespace facebook.Repository
 {
-    public interface IValidation<T> where T : class
+    public interface IValidation<M> where M : class
     {
        
-        bool IsExist(T entity);
+        bool IsExist(M entity);
         bool IsExistById(int Id);
     }
 }

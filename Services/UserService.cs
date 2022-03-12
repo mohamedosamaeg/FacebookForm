@@ -51,7 +51,7 @@ namespace facebook.Services
 
         public bool IsExist(string UserName, string Password)
         {
-            return dbContext.users.Any(x => x.UserName == UserName && x.Password == Password);
+            return dbContext.users.Any(x => x.UserName == UserName && x.Password == Password); 
         }
 
         public bool IsPasswordMatch(string Password, string ConfirmPassword)

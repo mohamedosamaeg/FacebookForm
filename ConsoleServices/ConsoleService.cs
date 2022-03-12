@@ -262,7 +262,7 @@ namespace facebook.ConsoleServices
             int Stories = Convert.ToInt16(Console.ReadLine());
             StoriesService storiesService = new StoriesService();
             IStoriesRepository StoriesService = (IStoriesRepository)storiesService;
-            StoriesService.Actions(Stories);
+            
         }
 
         private static void AddStories()

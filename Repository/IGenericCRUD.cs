@@ -4,12 +4,12 @@ using System.Text;
 
 namespace facebook.Repository
 {
-    public interface IGenericCRUD<T> where T : class
+    public interface IGenericCRUD<M> where M : class
     {
-        void Add(T entity);
-        void Update(T entity);
+        void Add(M entity);
+        void Update(M entity);
         void Delete(int Id);
-        T Get(int id);
-        List<T> Get();
+        M Get(int id);
+        List<M> Get();
     }
 }

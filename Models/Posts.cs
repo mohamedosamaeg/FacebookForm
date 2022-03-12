@@ -8,8 +8,9 @@ namespace facebook.Models
 {
     public class Posts : Audit
     {
-        public int PostId { get; set; }
-        [ForeignKey("PostId")]
+        public int GroupId { get; set; }
+        [ForeignKey("GroupId")]
+        public Groups group { get; set; }
         public Groups Groups { get; set; }
 
     }

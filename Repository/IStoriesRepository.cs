@@ -7,6 +7,6 @@ namespace facebook.Repository
 {
     public interface IStoriesRepository : IGenericCRUD<Stories>
     {
-        void Actions(int stories);
+        
     }
 }

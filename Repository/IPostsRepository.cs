@@ -7,6 +7,7 @@ namespace facebook.Repository
 {
     public interface IPostsRepository : IGenericCRUD<Posts>
     {
-        void Likes(int Posts);
+
+       
     }
 }

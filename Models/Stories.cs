@@ -11,12 +11,12 @@ namespace facebook.Models
     public class Stories : Audit
     { 
         
-        public int GroupsId { get; set; }
+        public int StoryId { get; set; }
         public DateTime ExpiredTime { get; set; }
         public String StoryReply { get; set; }
-        [ForeignKey("GroupsId")]
+        [ForeignKey("StoryId")]
         public Groups Groups { get;  set; }
-        public String StoriesOwner { get;  set; }
+
         public string StoryOwner { get;  set; }
         public string Isplay { get;  set; }
     }

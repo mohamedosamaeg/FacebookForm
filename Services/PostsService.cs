@@ -1,7 +1,9 @@
 ﻿using facebook.Models;
 using facebook.Repository;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 
@@ -17,8 +19,8 @@ namespace facebook.Services
             if (!IsExist(entity))
             {
                 entity.CreatedDate = DateTime.Now;
-                DbContext.Story.Add(entity);
-                dbContext.SaveChanges();
+                DbContext.Post.Add(entity);
+                DbContext.SaveChanges();
             }
         }
 
@@ -27,29 +29,29 @@ namespace facebook.Services
             if (IsExistById(Id))
             {
                 DbContext.Post.Remove(Get(Id));
-                dbContext.SaveChanges();
+                DbContext.SaveChanges();
             }
         }
 
-        public Stories Get(int id)
+        public Posts Get(int id)
         {
             if (IsExistById(id))
             {
-                return dbContext.Story.Where(x => x.Id == id).SingleOrDefault();
+                return DbContext.Post.Where(x => x.Id == id).SingleOrDefault();
             }
             return null;
         }
 
         public List<Posts> Get()
         {
-            return dbContext.Story.ToList();
+            return DbContext.Post.ToList();
         }
 
         public bool IsExist(Posts entity)
         {
             if (!IsExistById(entity.Id))
             {
-                return dbContext.Post.Any(x => x.Name == entity.Name);
+                return DbContext.Post.Any(x => x.Name == entity.Name);
             }
             else
             {
@@ -59,10 +61,10 @@ namespace facebook.Services
 
         public bool IsExistById(int Id)
         {
-            return dbContext.Post.Any(x => x.Id == Id);
+            return DbContext.Post.Any(x => x.Id == Id);
         }
 
-        public void Edite(Stories entity)
+        public void Edite(Posts entity)
         {
             throw new NotImplementedException();
         }

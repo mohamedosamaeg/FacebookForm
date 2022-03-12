@@ -22,7 +22,7 @@ namespace facebook
         public DbSet<Groups> groups { get;  set; }
         public DbSet<User> users{ get; set; }
         public DbSet<UserRole> UserRole { get;  set; }
-        public DbSet<Posts> posts { get; set; }
+        public DbSet<Posts> Post { get; set; }
 
     }
 }

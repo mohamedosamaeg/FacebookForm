@@ -17,7 +17,7 @@ namespace facebook.Models
         public string ConfirmPassword { get; set; }
         public int UserRoleId { get; set; }
         [ForeignKey("UserRoleId")]
-        public  UserRole userRole  { get; set; }
+        public UserRole UserRole { get; set; }
         
         public string mobiles { get; set; }
     }

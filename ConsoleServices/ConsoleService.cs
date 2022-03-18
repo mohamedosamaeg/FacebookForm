@@ -21,7 +21,7 @@ namespace facebook.ConsoleServices
             Console.WriteLine($"Welcome {ProjectDetails.ProjectName}\n" +
                 $"{ProjectDetails.Version}\n" +
                 $"{ProjectDetails.ProjectDescription}\n\n");
-            
+            SeedData();
             Console.WriteLine("Are you current user? true or false");
             bool IsCurrent = Convert.ToBoolean(Console.ReadLine());
             User user = new User();
@@ -48,13 +48,10 @@ namespace facebook.ConsoleServices
             throw new NotImplementedException();
         }
 
-        private static void SeedDate(object groupsService)
+        
+        private static void SeedData()
         {
-            throw new NotImplementedException();
-        }
-
-        private static void SeedDate(GroupsService groupsService)
-        {
+            GroupsService groupsService = new GroupsService();
             UserService userService = new UserService();
 
             User user = new User();

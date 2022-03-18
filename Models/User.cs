@@ -9,15 +9,13 @@ namespace facebook.Models
 {
     public class User : Human
     {
-
-
         public string UserName { get; set; }
         public string Password { get; set; }
         [NotMapped]
         public string ConfirmPassword { get; set; }
         public int UserRoleId { get; set; }
         [ForeignKey("UserRoleId")]
-        public UserRole UserRole { get; set; }
+        public UserRole userRole { get; set; }
         
         public string mobiles { get; set; }
     }

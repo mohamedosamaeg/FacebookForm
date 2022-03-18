@@ -14,15 +14,13 @@ namespace facebook
         }
 
         public DbSet<Stories>Story { get; set; }
-        
-        public DbSet<ProfileSettings> ProfileSetting { get; set; }
         public DbSet<Address> Addresses { get; set; }
         
         public DateTime CreatedDate { get;  set; }
         public DbSet<Groups> groups { get;  set; }
         public DbSet<User> users{ get; set; }
         public DbSet<UserRole> UserRole { get;  set; }
-        public DbSet<Posts> Post { get; set; }
+        public DbSet<Post> Post { get; set; }
 
     }
 }

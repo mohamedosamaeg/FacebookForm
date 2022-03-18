@@ -28,7 +28,7 @@ namespace facebook.ConsoleServices
             if (IsCurrent)
             {
                 user = LoginForm();
-                if (User.UserRole.Name == Admin.AdminRole)
+                if (user.userRole.Name == Admin.AdminRole)
                 {
                     AdminUserDealing(user);
                 }

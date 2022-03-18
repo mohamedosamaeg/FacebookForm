@@ -104,7 +104,7 @@ namespace facebook.Services
             if (IsExist(UserName.ToUpper(), Password.ToUpper()))
             {
                 return dbContext.users.Where(x => x.UserName == UserName && x.Password == Password)
-                    .Include(x => x.UserRole).FirstOrDefault();
+                    .Include(x => x.userRole).FirstOrDefault();
             }
             return null;
         }

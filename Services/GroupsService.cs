@@ -26,8 +26,6 @@ namespace facebook.Services
         {
             if (IsExistById(Id))
             {
-                
-
                 dbContext.groups.Remove(Get(Id));
                 dbContext.SaveChanges();
             }
@@ -59,11 +57,7 @@ namespace facebook.Services
             }
         }
 
-        private bool IsExistById(object id)
-        {
-            throw new NotImplementedException();
-        }
-
+  
         public bool IsExistById(int Id)
         {
             return dbContext.groups.Any(x => x.Id == Id);
@@ -80,17 +74,6 @@ namespace facebook.Services
             }
         }
 
-        private bool IsExist(GroupsService entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add(GroupsService entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        
     }
        
 }

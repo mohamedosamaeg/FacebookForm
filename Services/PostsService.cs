@@ -9,10 +9,10 @@ using System.Linq;
 namespace facebook.Services
 {
 
-    public class PostsService : IGenericCRUD<Posts>, IValidation<Posts>
+    public class PostsService : IPostsRepository
     {
         FacebookDbContext DbContext = new FacebookDbContext();
-        public void Add(Posts entity)
+        public void Add(Post entity)
         {
             if (!IsExist(entity))
             {
@@ -31,7 +31,7 @@ namespace facebook.Services
             }
         }
 
-        public Posts Get(int id)
+        public Post Get(int id)
         {
             if (IsExistById(id))
             {
@@ -40,12 +40,12 @@ namespace facebook.Services
             return null;
         }
 
-        public List<Posts> Get()
+        public List<Post> Get()
         {
             return DbContext.Post.ToList();
         }
 
-        public bool IsExist(Posts entity)
+        public bool IsExist(Post entity)
         {
             if (!IsExistById(entity.Id))
             {
@@ -62,17 +62,17 @@ namespace facebook.Services
             return DbContext.Post.Any(x => x.Id == Id);
         }
 
-        public void Edite(Posts entity)
+        public void Update(Post entity)//complete 
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Posts entity)
+        public List<Post> GetByGroupId(int groupId)
         {
             throw new NotImplementedException();
         }
 
-        Posts IGenericCRUD<Posts>.Get(int id)
+        public List<Post> GetByUserId(int userId)
         {
             throw new NotImplementedException();
         }

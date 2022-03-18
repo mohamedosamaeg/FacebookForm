@@ -7,7 +7,7 @@ using facebook.Repository;
 
 namespace facebook.Services
 {
-    public class StoriesService : IGenericCRUD<Stories>, IValidation<Stories>
+    public class StoriesService : IStoriesRepository
     {
         FacebookDbContext dbContext = new FacebookDbContext();
         public void Add(Stories entity)

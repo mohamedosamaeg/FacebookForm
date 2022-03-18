@@ -10,10 +10,10 @@ namespace facebook.Models
 {
     public class Stories : Audit
     { 
-        
-        public int StoryId { get; set; }
+        public string ImageName { get; set; }
+        public string Text { get; set; }
         public DateTime ExpiredTime { get; set; }
-        public Stories stories  { get; set; }
+       // public Stories stories  { get; set; }
         public int GroupId { get; set; }
         [ForeignKey("GroupId")]
         public Groups group { get; set; }
@@ -21,6 +21,5 @@ namespace facebook.Models
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public User user { get; set; }
-
     }
 }

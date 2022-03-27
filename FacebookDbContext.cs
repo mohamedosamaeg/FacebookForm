@@ -21,6 +21,7 @@ namespace facebook
         public DbSet<User> users{ get; set; }
         public DbSet<UserRole> UserRole { get;  set; }
         public DbSet<Post> Post { get; set; }
+        public DbSet<Warning> Warning { get; set; }
 
     }
 }

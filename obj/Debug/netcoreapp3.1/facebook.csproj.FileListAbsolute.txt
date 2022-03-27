@@ -1,0 +1,5 @@
+C:\Users\HP\Source\Repos\FacebookFormv1\obj\Debug\netcoreapp3.1\facebook.csproj.AssemblyReference.cache
+C:\Users\HP\Source\Repos\FacebookFormv1\obj\Debug\netcoreapp3.1\facebook.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Source\Repos\FacebookFormv1\obj\Debug\netcoreapp3.1\facebook.AssemblyInfoInputs.cache
+C:\Users\HP\Source\Repos\FacebookFormv1\obj\Debug\netcoreapp3.1\facebook.AssemblyInfo.cs
+C:\Users\HP\Source\Repos\FacebookFormv1\obj\Debug\netcoreapp3.1\facebook.csproj.CoreCompileInputs.cache

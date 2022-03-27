@@ -21,7 +21,7 @@ namespace facebook.ConsoleServices
             Console.WriteLine($"Welcome {ProjectDetails.ProjectName}\n" +
                 $"{ProjectDetails.Version}\n" +
                 $"{ProjectDetails.ProjectDescription}\n\n");
-            SeedData();
+            SeedData(UserRoleService);
             Console.WriteLine("Are you current user? true or false");
             bool IsCurrent = Convert.ToBoolean(Console.ReadLine());
             User user = new User();
@@ -49,7 +49,7 @@ namespace facebook.ConsoleServices
         }
 
         
-        private static void SeedData()
+        private static void SeedData(UserRoleService userRoleService)
         {
             GroupsService groupsService = new GroupsService();
             UserService userService = new UserService();
@@ -61,9 +61,9 @@ namespace facebook.ConsoleServices
             UserAmin.Name = Admin.AdminRole;
             userRoleService.Add(UserAmin);
 
-            UserRole GeneralUser = new UserRole();
-            GeneralUser.Name = "GeneralUser";
-            userRoleService.Add(GeneralUser);
+            UserRole GeneralRole = new UserRole();
+            GeneralRole.Name = "GeneralRole";
+            userRoleService.Add(GeneralRole);
 
             if (!userService.IsExist(Admin.AdminName, Admin.AdminPassword))
             {
@@ -78,19 +78,9 @@ namespace facebook.ConsoleServices
             }
             GroupsService Groups = new GroupsService();
             Groups groups = new Groups();
-            groups.Name = "Alahly Community";
+        
             groupsService.Add(groups);
         }
-
-        private static void ViewCard()
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-
-
         #region User
         private static User RegisterUser()
         {
@@ -114,6 +104,11 @@ namespace facebook.ConsoleServices
                 Console.WriteLine("Please Confirm password");
                 user.ConfirmPassword = Console.ReadLine();
                 user.UserRoleId = 2;
+                #endregion
+                userService.Add(user);
+                user = userService.LogIn(user.UserName, user.Password);
+
+       
                 #endregion
                 userService.Add(user);
                 user = userService.LogIn(user.UserName, user.Password);
@@ -153,9 +148,7 @@ namespace facebook.ConsoleServices
                         case 2:
                             UpdateProfile(user);
                             break;
-                        case 3:
-                            ViewCard();
-                            break;
+                        
                         default:
                             break;
                     }
@@ -182,26 +175,26 @@ namespace facebook.ConsoleServices
             for (; ; )
             {
                 Console.WriteLine("Please choose number of action\n-----\n" +
-                    "1.Display all product\n" +
-                    "2.Insert new product\n" +
-                    "3.Active Product\n" +
-                    "4.Dective Product\n" +
+                    "1.Viewanalatix\n" +
+                    "2.AddWarning\n" +
+                    "3.ActiveStories\n" +
+                    "4.PlayStory\n" +
                     "5.Close actions");
                 int Action = Convert.ToInt16(Console.ReadLine());
 
                 switch (Action)
                 {
                     case 1:
-                        ViewStories();
+                        Viewanalatix();
                         break;
                     case 2:
-                        AddStories();
+                        Warning();
                         break;
                     case 3:
                         ActiveStories();
                         break;
                     case 4:
-                        DetciveStories();
+                        PlayStory();
                         break;
                     default:
                         break;
@@ -213,7 +206,7 @@ namespace facebook.ConsoleServices
             }
         }
 
-        private static void ViewStories()
+        private static void Viewanalatix()
         {
             throw new NotImplementedException();
         }
@@ -231,7 +224,7 @@ namespace facebook.ConsoleServices
             ViewProfile(user);
         }
 
-        #endregion
+        
         
         private static void ViewStories(Stories Stories)
         {
@@ -243,11 +236,11 @@ namespace facebook.ConsoleServices
             {
                 foreach (var Stories in stories)
                 {
-                    DisplayStories(Stories);
+                    
                 }
             }
         }
-        private static void DetciveStories()
+        private static void PlayStory()
         {
             Console.WriteLine("Insert product id ");
             int id = Convert.ToInt16(Console.ReadLine());
@@ -263,60 +256,37 @@ namespace facebook.ConsoleServices
             
         }
 
-        private static void AddStories()
+        private static void Warning()
         {
-            Stories stories = StoriesModel();
-            StoriesService = new StoriesService();
-            StoriesService.Add(stories);
+            Warning warning = warning();
+            WarningService = new StoriesService();
+            WarningService.Add();
 
         }
 
-        private static Stories StoriesModel()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         private static void ShowStories()
         {
             StoriesService productService = new StoriesService();
             List<Stories> StoriesService = productService.Get();
-            Console.WriteLine("All product\n_______________\n");
+            Console.WriteLine("All Stories\n_______________\n");
             foreach (Stories Stories in StoriesService)
             {
                 
             }
-        }
-
-        private static void PlayStory (Stories product, bool v)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void DisplayStories(Stories Stories, bool IsAdmin = false)
-        {
-            if (IsAdmin)
-            {
-                Console.WriteLine($"id.{Stories.Id}\n" +
-                    $"Story's Owner {Stories.UserId}\n" +
-                    $"Created Date {Stories.CreatedDate}\n");
-
-                   
-                   
+             
+       
             }
-            else
-            {
-                Console.WriteLine($"id.{Stories.Id}\n" +
-                   $"Story's User {Stories.UserId}\n");
 
+        
 
-
-            }
+        
         }
         
     }
 
 
-}
 
     
     

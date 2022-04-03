@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Source\\Repos\\FacebookFormv1\\facebook.csproj": {}
+    "C:\\Users\\HP\\source\\repos\\Facebook.Org\\facebook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Source\\Repos\\FacebookFormv1\\facebook.csproj": {
+    "C:\\Users\\HP\\source\\repos\\Facebook.Org\\facebook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\FacebookFormv1\\facebook.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Facebook.Org\\facebook.csproj",
         "projectName": "facebook",
-        "projectPath": "C:\\Users\\HP\\Source\\Repos\\FacebookFormv1\\facebook.csproj",
+        "projectPath": "C:\\Users\\HP\\source\\repos\\Facebook.Org\\facebook.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Source\\Repos\\FacebookFormv1\\obj\\",
+        "outputPath": "C:\\Users\\HP\\source\\repos\\Facebook.Org\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -175,10 +175,10 @@ namespace facebook.ConsoleServices
             for (; ; )
             {
                 Console.WriteLine("Please choose number of action\n-----\n" +
-                    "1.Viewanalatix\n" +
-                    "2.AddWarning\n" +
-                    "3.ActiveStories\n" +
-                    "4.PlayStory\n" +
+                    "1.View analatix\n" +
+                    "2.Add Warning\n" +
+                    "3. Seen Stories\n" +
+                    "4.Play Story\n" +
                     "5.Close actions");
                 int Action = Convert.ToInt16(Console.ReadLine());
 
@@ -191,7 +191,7 @@ namespace facebook.ConsoleServices
                         Warning();
                         break;
                     case 3:
-                        ActiveStories();
+                        SeenStories();
                         break;
                     case 4:
                         PlayStory();
@@ -247,7 +247,7 @@ namespace facebook.ConsoleServices
             
         }
 
-        private static void ActiveStories()
+        private static void SeenStories()
         {
             Console.WriteLine("Insert Stories ");
             int Stories = Convert.ToInt16(Console.ReadLine());
@@ -258,7 +258,7 @@ namespace facebook.ConsoleServices
 
         private static void Warning()
         {
-            Warning warning = warning();
+            Warning Warning = Warning();
             WarningService = new StoriesService();
             WarningService.Add();
 

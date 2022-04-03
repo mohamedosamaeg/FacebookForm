@@ -18,6 +18,7 @@ namespace facebook.Models
         public UserRole userRole { get; set; }
         
         public string mobiles { get; set; }
+        public List<Warning> warnings { get; set; }
     }
 }
 

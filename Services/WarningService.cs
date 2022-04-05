@@ -3,6 +3,8 @@ using facebook.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+ 
+
 using System.Linq;
 using System.Text;
 
@@ -35,8 +37,13 @@ namespace facebook.Services
         {
             return dbContext.Warning.Any(x => x.Id == Id);
         }
+        // مش عارف المشكله فين
 
 
     }
-}
+        
+        }
+
+       
+
     

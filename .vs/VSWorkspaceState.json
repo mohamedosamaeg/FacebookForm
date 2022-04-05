@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ConsoleServices",
+    "\\Shared"
   ],
-  "SelectedNode": "\\facebook.sln",
+  "SelectedNode": "\\ConsoleServices\\ConsoleService.cs",
   "PreviewInSolutionExplorer": false
 }

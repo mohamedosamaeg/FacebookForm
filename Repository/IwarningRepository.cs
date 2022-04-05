@@ -6,7 +6,7 @@ using facebook.Models;
 
 namespace facebook.Repository
 {
-    public class IwarningRepository : IGenericCRUD<Warning>
+    public class IwarningRepository : IGenericCRUD<Warning>, IValidation<Warning>
     {
         public void Add(Warning entity)
         {
@@ -24,6 +24,16 @@ namespace facebook.Repository
         }
 
         public List<Warning> Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsExist(Warning entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsExistById(int Id)
         {
             throw new NotImplementedException();
         }

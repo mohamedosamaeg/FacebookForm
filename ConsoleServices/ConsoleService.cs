@@ -21,7 +21,7 @@ namespace facebook.ConsoleServices
             Console.WriteLine($"Welcome {ProjectDetails.ProjectName}\n" +
                 $"{ProjectDetails.Version}\n" +
                 $"{ProjectDetails.ProjectDescription}\n\n");
-            SeedData(UserRoleService);
+            SeedData();
             Console.WriteLine("Are you current user? true or false");
             bool IsCurrent = Convert.ToBoolean(Console.ReadLine());
             User user = new User();
@@ -49,7 +49,7 @@ namespace facebook.ConsoleServices
         }
 
         
-        private static void SeedData(UserRoleService userRoleService)
+        private static void SeedData()
         {
             GroupsService groupsService = new GroupsService();
             UserService userService = new UserService();
@@ -177,7 +177,7 @@ namespace facebook.ConsoleServices
                 Console.WriteLine("Please choose number of action\n-----\n" +
                     "1.Viewanalatix\n" +
                     "2.AddWarning\n" +
-                    "3.ActiveStories\n" +
+                    "3.Stories\n" +
                     "4.PlayStory\n" +
                     "5.Close actions");
                 int Action = Convert.ToInt16(Console.ReadLine());
@@ -191,7 +191,7 @@ namespace facebook.ConsoleServices
                         Warning();
                         break;
                     case 3:
-                        ActiveStories();
+                        SeenStories();
                         break;
                     case 4:
                         PlayStory();
@@ -247,7 +247,7 @@ namespace facebook.ConsoleServices
             
         }
 
-        private static void ActiveStories()
+        private static void SeenStories()
         {
             Console.WriteLine("Insert Stories ");
             int Stories = Convert.ToInt16(Console.ReadLine());
@@ -258,9 +258,9 @@ namespace facebook.ConsoleServices
 
         private static void Warning()
         {
-            Warning warning = warning();
-            WarningService = new StoriesService();
-            WarningService.Add();
+            Warning warning = new Warning();
+            WarningService warningService = new WarningService();
+           // WarningService.Add();
 
         }
 

@@ -37,7 +37,6 @@ namespace facebook.Services
         {
             return dbContext.Warning.Any(x => x.Id == Id);
         }
-        // مش عارف المشكله فين
 
 
     }

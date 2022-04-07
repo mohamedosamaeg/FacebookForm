@@ -136,9 +136,9 @@ namespace facebook.ConsoleServices
                 {
                     Console.WriteLine($"Hello {user.FullName}\n");
                     Console.WriteLine("Please insert number of action\n" +
-                        "1. view products\n" +
-                        "2. update profile\n" +
-                        "3. view card");
+                        "1. View Stories\n" +
+                        "2. Update Profile\n" +
+                        "3. View Profile");
                     int ActionNumber = Convert.ToInt32(Console.ReadLine());
                     switch (ActionNumber)
                     {
@@ -146,9 +146,12 @@ namespace facebook.ConsoleServices
                             ViewStories(stories);
                             break;
                         case 2:
-                            UpdateProfile(user);
+                            UpdateInformations(user);
                             break;
-                        
+                        case 3:
+                            ViewProfile(user);
+                            break;
+
                         default:
                             break;
                     }
@@ -185,7 +188,7 @@ namespace facebook.ConsoleServices
                 switch (Action)
                 {
                     case 1:
-                        Viewanalatix();
+                        ViewProfile(user);
                         break;
                     case 2:
                         Warning();
@@ -194,7 +197,7 @@ namespace facebook.ConsoleServices
                         SeenStories();
                         break;
                     case 4:
-                        PlayStory();
+                        ShowStories();
                         break;
                     default:
                         break;
@@ -206,26 +209,41 @@ namespace facebook.ConsoleServices
             }
         }
 
-        private static void Viewanalatix()
-        {
-            throw new NotImplementedException();
-        }
-
         private static void ViewProfile(User user)
         {
-            Console.WriteLine($"first name {user.FirstName}\n" +
-                $"last name {user.LastName}\n" +
-                $"user name {user.UserName}\n" +
-                $"birthday {user.BirthDay}\n" +
-                $"Email {user.Email}\n");
+            Console.WriteLine($"first name {Admin.AdminName}\n" +
+                            $"Admin Password {Admin.AdminPassword}\n" +
+
+                            $"Email {Admin.AdminEmail}\n");
         }
-        private static void UpdateProfile(User user)
+
+       
+        private static void UpdateInformations(User user)
         {
             ViewProfile(user);
         }
 
+
+        private static void  ViewProfile(User user,bool IsAdmin =false )
+        {
+            if(IsAdmin)
+                {
+                ViewProfile(user);
+               
+            }
+            else { 
+                Console.WriteLine($"first name {user.FirstName}\n" +
+                $"Last Name {user.LastName}\n" +
+                            $"Admin Password {user.Password}\n" +
+                            $"Birthday {user.BirthDay}\n" +
+
+
+                            $"Email {user.Email}\n");
+            }
+        }
+
         
-        
+
         private static void ViewStories(Stories Stories)
         {
             StoriesService StoriesService = new StoriesService();
@@ -240,17 +258,19 @@ namespace facebook.ConsoleServices
                 }
             }
         }
-        private static void PlayStory()
+        private static void PlayStory(Stories stories)
         {
-            Console.WriteLine("Insert product id ");
-            int id = Convert.ToInt16(Console.ReadLine());
-            
+            Console.WriteLine("Insert story id ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Hehehe Try Again you donot have any stories yet:) {stories.Text}\n");
+
+
         }
 
         private static void SeenStories()
         {
             Console.WriteLine("Insert Stories ");
-            int Stories = Convert.ToInt16(Console.ReadLine());
+            int Stories = Convert.ToInt32(Console.ReadLine());
             StoriesService storiesService = new StoriesService();
             IStoriesRepository StoriesService = (IStoriesRepository)storiesService;
             
@@ -260,16 +280,26 @@ namespace facebook.ConsoleServices
         {
             Warning warning = new Warning();
             WarningService warningService = new WarningService();
-           // WarningService.Add();
+            WarningForm(warning);
+            
+            warningService.Add(warning);
+            Console.WriteLine("Warning Added!");
 
         }
 
-        
+        private static void WarningForm(Warning warning)
+        {
+            Console.WriteLine("Insert your warning Plz");
+            warning.warnings= Console.ReadLine();
+            Console.WriteLine("Insert User Id Plz");
+            warning.UserId= Convert.ToInt32(Console.ReadLine());
+        }
+
 
         private static void ShowStories()
         {
-            StoriesService productService = new StoriesService();
-            List<Stories> StoriesService = productService.Get();
+            StoriesService storiesService = new StoriesService();
+            List<Stories> StoriesService = storiesService.Get();
             Console.WriteLine("All Stories\n_______________\n");
             foreach (Stories Stories in StoriesService)
             {

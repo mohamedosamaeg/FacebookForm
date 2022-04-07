@@ -8,7 +8,8 @@ namespace facebook.Const
     {
         public const string ProjectName = "Facebook";
         public const string ProjectDescription = "Social Media App";
-        public static string Version = "3.0";
-        
+        public static string Version = "6.0";
+        public static string DesignedBy = "Mohamed Osama";
+
     }
 }

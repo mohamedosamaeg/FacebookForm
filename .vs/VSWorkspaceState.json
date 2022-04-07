@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ConsoleServices",
+    "\\Services",
     "\\Shared"
   ],
-  "SelectedNode": "\\ConsoleServices\\ConsoleService.cs",
+  "SelectedNode": "\\Services\\GroupsService.cs",
   "PreviewInSolutionExplorer": false
 }
